@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 
-class SecondTask extends StatelessWidget {
-  const SecondTask({Key? key}) : super(key: key);
+class SecondTaskPage extends StatelessWidget {
+  const SecondTaskPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Second Task Page'),
+      ),
+    );
   }
 }

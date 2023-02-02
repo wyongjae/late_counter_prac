@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 
-class ThirdTask extends StatelessWidget {
-  const ThirdTask({Key? key}) : super(key: key);
+class ThirdTaskPage extends StatelessWidget {
+  const ThirdTaskPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Third Task Page'),
+      ),
+    );
   }
 }
