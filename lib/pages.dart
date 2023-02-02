@@ -9,7 +9,19 @@ class Pages extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Second Lecture'),
       ),
-      body: Container(),
+      body: Center(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ElevatedButton(onPressed: () {}, child: const Text('Go to First Task Page')),
+            ElevatedButton(onPressed: () {}, child: const Text('Go to Second Task Page')),
+            ElevatedButton(onPressed: () {}, child: const Text('Go to Third Task Page')),
+            ElevatedButton(onPressed: () {}, child: const Text('Go to Counter Page')),
+
+          ],
+        ),
+      ),
     );
   }
 }
