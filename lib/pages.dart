@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:late_conter_prac/counter_page.dart';
 import 'package:late_conter_prac/task/first_task.dart';
+import 'package:late_conter_prac/task/fourth_task.dart';
 import 'package:late_conter_prac/task/second_task.dart';
 import 'package:late_conter_prac/task/third_task.dart';
 
@@ -54,6 +55,15 @@ class Pages extends StatelessWidget {
                   );
                 },
                 child: const Text('Go to Counter Page')),
+            // ElevatedButton(
+            //     onPressed: () {
+            //       Navigator.push(
+            //         context,
+            //         MaterialPageRoute(
+            //             builder: (context) => const FourthTaskPage()),
+            //       );
+            //     },
+            //     child: const Text('Go to Fourth Task Page')),
           ],
         ),
       ),
