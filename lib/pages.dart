@@ -51,19 +51,19 @@ class Pages extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
+                        builder: (context) => const FourthTaskPage()),
+                  );
+                },
+                child: const Text('Go to Fourth Task Page')),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
                         builder: (context) => const CounterPage()),
                   );
                 },
                 child: const Text('Go to Counter Page')),
-            // ElevatedButton(
-            //     onPressed: () {
-            //       Navigator.push(
-            //         context,
-            //         MaterialPageRoute(
-            //             builder: (context) => const FourthTaskPage()),
-            //       );
-            //     },
-            //     child: const Text('Go to Fourth Task Page')),
           ],
         ),
       ),
