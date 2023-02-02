@@ -9,6 +9,19 @@ class FirstTaskPage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('First Task Page'),
       ),
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () async {
+            debugPrint('hello');
+            await Future.delayed(const Duration(seconds: 1));
+            debugPrint('hello');
+            await Future.delayed(const Duration(seconds: 1));
+            debugPrint('hello');
+            await Future.delayed(const Duration(seconds: 1));
+          },
+          child: const Text('print'),
+        ),
+      ),
     );
   }
 }
