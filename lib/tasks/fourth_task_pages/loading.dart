@@ -1,0 +1,17 @@
+import 'package:flutter/material.dart';
+
+class Loading with ChangeNotifier {
+  bool _isLoading = false;
+
+  bool get isLoading => _isLoading;
+
+  Future<void> task() async {
+      _isLoading = true;
+      notifyListeners();
+
+    await Future.delayed(const Duration(seconds: 3));
+
+      _isLoading = false;
+      notifyListeners();
+  }
+}

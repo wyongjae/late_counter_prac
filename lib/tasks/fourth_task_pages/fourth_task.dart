@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:late_conter_prac/tasks/fourth_task_pages/loading.dart';
 import 'package:late_conter_prac/util/random.dart';
+import 'package:provider/provider.dart';
 
 class FourthTaskPage extends StatefulWidget {
   const FourthTaskPage({Key? key}) : super(key: key);
@@ -9,8 +11,6 @@ class FourthTaskPage extends StatefulWidget {
 }
 
 class _FourthTaskPageState extends State<FourthTaskPage> {
-  bool isLoading = false;
-
   final List<String> results = [
     '호랑이',
     '멍멍이',
@@ -20,6 +20,7 @@ class _FourthTaskPageState extends State<FourthTaskPage> {
 
   @override
   Widget build(BuildContext context) {
+    final loading = Provider.of<Loading>(context);
     return Scaffold(
       appBar: AppBar(
         title: const Text('Fourth Task Page'),
@@ -30,7 +31,7 @@ class _FourthTaskPageState extends State<FourthTaskPage> {
           children: [
             ElevatedButton(
                 onPressed: ()  {
-                   task();
+                  loading.task();
                 },
                 child: const Text('당신의 전생은?')),
             const SizedBox(
@@ -44,24 +45,13 @@ class _FourthTaskPageState extends State<FourthTaskPage> {
   }
 
   Widget _buildResult() {
-    if (isLoading == true) {
+    final loading = Provider.of<Loading>(context);
+    if (loading.isLoading == true) {
       return const CircularProgressIndicator();
     }
 
     int number = getRandomNumber(3);
 
     return Text(results[number]);
-  }
-
-  Future<void> task() async {
-    setState(() {
-      isLoading = true;
-    });
-
-    await Future.delayed(const Duration(seconds: 3));
-
-    setState(() {
-      isLoading = false;
-    });
   }
 }

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:late_conter_prac/tasks/counter_task_pages/counter.dart';
+import 'package:provider/provider.dart';
 
 class CounterPage extends StatefulWidget {
   const CounterPage({super.key});
@@ -8,16 +10,11 @@ class CounterPage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<CounterPage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
+    final counter = Provider.of<Counter>(context);
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Counter Page'),
@@ -30,14 +27,14 @@ class _MyHomePageState extends State<CounterPage> {
               'You have pushed the button this many times:',
             ),
             Text(
-              '$_counter',
+              '${counter.counter}',
               style: Theme.of(context).textTheme.headlineMedium,
             ),
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
+        onPressed: counter.incrementCounter,
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ),
