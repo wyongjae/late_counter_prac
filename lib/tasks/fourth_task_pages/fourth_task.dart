@@ -1,22 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:late_conter_prac/tasks/fourth_task_pages/build_result.dart';
 import 'package:late_conter_prac/tasks/fourth_task_pages/loading.dart';
-import 'package:late_conter_prac/util/random.dart';
 import 'package:provider/provider.dart';
 
-class FourthTaskPage extends StatefulWidget {
+class FourthTaskPage extends StatelessWidget {
   const FourthTaskPage({Key? key}) : super(key: key);
-
-  @override
-  State<FourthTaskPage> createState() => _FourthTaskPageState();
-}
-
-class _FourthTaskPageState extends State<FourthTaskPage> {
-  final List<String> results = [
-    '호랑이',
-    '멍멍이',
-    '고양이',
-    '인간',
-  ];
 
   @override
   Widget build(BuildContext context) {
@@ -37,21 +25,10 @@ class _FourthTaskPageState extends State<FourthTaskPage> {
             const SizedBox(
               height: 5,
             ),
-            _buildResult(),
+            const BuildResult(),
           ],
         ),
       ),
     );
-  }
-
-  Widget _buildResult() {
-    final loading = Provider.of<Loading>(context);
-    if (loading.isLoading == true) {
-      return const CircularProgressIndicator();
-    }
-
-    int number = getRandomNumber(3);
-
-    return Text(results[number]);
   }
 }
