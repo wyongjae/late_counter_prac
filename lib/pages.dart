@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:late_conter_prac/tasks/counter_task_pages/counter_page.dart';
 import 'package:late_conter_prac/tasks/fourth_task_pages/fourth_task.dart';
+import 'package:late_conter_prac/tasks/image_search/image_search_page.dart';
 import 'tasks/first_task.dart';
 import 'tasks/second_task.dart';
 import 'tasks/third_task.dart';
@@ -27,7 +28,7 @@ class Pages extends StatelessWidget {
                         builder: (context) => const FirstTaskPage()),
                   );
                 },
-                child: const Text('Go to First Task Page')),
+                child: const Text('First Task Page')),
             ElevatedButton(
                 onPressed: () {
                   Navigator.push(
@@ -36,7 +37,7 @@ class Pages extends StatelessWidget {
                         builder: (context) => const SecondTaskPage()),
                   );
                 },
-                child: const Text('Go to Second Task Page')),
+                child: const Text('Second Task Page')),
             ElevatedButton(
                 onPressed: () {
                   Navigator.push(
@@ -45,7 +46,7 @@ class Pages extends StatelessWidget {
                         builder: (context) => const ThirdTaskPage()),
                   );
                 },
-                child: const Text('Go to Third Task Page')),
+                child: const Text('Third Task Page')),
             ElevatedButton(
                 onPressed: () {
                   Navigator.push(
@@ -54,7 +55,7 @@ class Pages extends StatelessWidget {
                         builder: (context) => const FourthTaskPage()),
                   );
                 },
-                child: const Text('Go to Fourth Task Page')),
+                child: const Text('Fourth Task Page')),
             ElevatedButton(
                 onPressed: () {
                   Navigator.push(
@@ -63,7 +64,16 @@ class Pages extends StatelessWidget {
                         builder: (context) => const CounterPage()),
                   );
                 },
-                child: const Text('Go to Counter Page')),
+                child: const Text('Counter Page')),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const ImageSearchPage()),
+                  );
+                },
+                child: const Text('Image Search Page')),
           ],
         ),
       ),

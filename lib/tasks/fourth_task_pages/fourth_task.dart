@@ -19,7 +19,7 @@ class FourthTaskPage extends StatelessWidget {
           children: [
             ElevatedButton(
                 onPressed: ()  {
-                  loading.task();
+                  loading.delay();
                 },
                 child: const Text('당신의 전생은?')),
             const SizedBox(

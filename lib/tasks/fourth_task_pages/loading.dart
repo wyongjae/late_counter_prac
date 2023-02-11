@@ -5,7 +5,7 @@ class Loading with ChangeNotifier {
 
   bool get isLoading => _isLoading;
 
-  Future<void> task() async {
+  Future<void> delay() async {
       _isLoading = true;
       notifyListeners();
 
