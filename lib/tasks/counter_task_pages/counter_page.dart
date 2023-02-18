@@ -16,19 +16,11 @@ class CounterPage extends StatefulWidget {
 }
 
 class CounterPageState extends State<CounterPage> {
-  StreamController<int> streamController = StreamController<int>();
-  int _counter = 0;
 
   @override
   void initState() {
     widget.counter.countStream;
     super.initState();
-  }
-
-  void _incrementCounter() {
-    _counter = _counter + 1;
-
-    streamController.add(_counter);
   }
 
   @override
@@ -45,7 +37,7 @@ class CounterPageState extends State<CounterPage> {
               'You have pushed the button this many times:',
             ),
             StreamBuilder<int>(
-                stream: streamController.stream,
+                stream: widget.counter.countStream,
                 builder: (context, snapshot) {
                   return Text(
                     '${snapshot.data}',
@@ -56,7 +48,9 @@ class CounterPageState extends State<CounterPage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
+        onPressed: () {
+          widget.counter.incrementCounter();
+        },
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ),
