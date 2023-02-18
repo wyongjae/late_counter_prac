@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:late_conter_prac/tasks/counter_task_pages/counter.dart';
 import 'package:late_conter_prac/tasks/counter_task_pages/counter_page.dart';
 import 'package:late_conter_prac/tasks/fourth_task_pages/fourth_task.dart';
 import 'package:late_conter_prac/tasks/image_search/image_search_page.dart';
@@ -61,7 +62,7 @@ class Pages extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => const CounterPage()),
+                        builder: (context) => CounterPage(counter: Counter())),
                   );
                 },
                 child: const Text('Counter Page')),

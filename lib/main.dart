@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:late_conter_prac/pages.dart';
-import 'package:late_conter_prac/tasks/counter_task_pages/counter.dart';
 import 'package:late_conter_prac/tasks/fourth_task_pages/loading.dart';
-import 'package:late_conter_prac/tasks/image_search/images.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -18,7 +16,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
         providers: [
-          ChangeNotifierProvider(create: (_) => Counter()),
           ChangeNotifierProvider(create: (_) => Loading()),
         ],
         child: MaterialApp(

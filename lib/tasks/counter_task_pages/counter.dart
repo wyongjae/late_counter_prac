@@ -1,12 +1,14 @@
-import 'package:flutter/material.dart';
+import 'dart:async';
 
-class Counter with ChangeNotifier {
-  int _counter = 0;
+class Counter {
+  final _countStreamController = StreamController<int>();
 
-  int get counter => _counter;
+  Stream get countStream => _countStreamController.stream;
+
+  int counter = 0;
 
   void incrementCounter() {
-    _counter++;
-    notifyListeners();
+    final result = counter + 1;
+    _countStreamController.add(result);
   }
 }

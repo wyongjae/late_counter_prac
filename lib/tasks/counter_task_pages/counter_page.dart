@@ -1,23 +1,41 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:late_conter_prac/tasks/counter_task_pages/counter.dart';
-import 'package:provider/provider.dart';
 
 class CounterPage extends StatefulWidget {
-  const CounterPage({super.key});
+  final Counter counter;
+
+  const CounterPage({
+    Key? key,
+    required this.counter,
+  }) : super(key: key);
 
   @override
-  State<CounterPage> createState() => _MyHomePageState();
+  CounterPageState createState() => CounterPageState();
 }
 
-class _MyHomePageState extends State<CounterPage> {
+class CounterPageState extends State<CounterPage> {
+  StreamController<int> streamController = StreamController<int>();
+  int _counter = 0;
+
+  @override
+  void initState() {
+    widget.counter.countStream;
+    super.initState();
+  }
+
+  void _incrementCounter() {
+    _counter = _counter + 1;
+
+    streamController.add(_counter);
+  }
 
   @override
   Widget build(BuildContext context) {
-    final counter = Provider.of<Counter>(context);
-
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Counter Page'),
+        title: const Text('Counter'),
       ),
       body: Center(
         child: Column(
@@ -26,15 +44,19 @@ class _MyHomePageState extends State<CounterPage> {
             const Text(
               'You have pushed the button this many times:',
             ),
-            Text(
-              '${counter.counter}',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
+            StreamBuilder<int>(
+                stream: streamController.stream,
+                builder: (context, snapshot) {
+                  return Text(
+                    '${snapshot.data}',
+                    style: Theme.of(context).textTheme.headline4,
+                  );
+                })
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: counter.incrementCounter,
+        onPressed: _incrementCounter,
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ),

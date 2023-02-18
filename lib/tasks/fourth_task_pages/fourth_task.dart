@@ -9,6 +9,7 @@ class FourthTaskPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final loading = Provider.of<Loading>(context);
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Fourth Task Page'),
