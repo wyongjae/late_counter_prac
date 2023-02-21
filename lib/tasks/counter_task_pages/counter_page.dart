@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:late_conter_prac/tasks/counter_task_pages/counter.dart';
 
@@ -16,10 +14,15 @@ class CounterPage extends StatefulWidget {
 }
 
 class CounterPageState extends State<CounterPage> {
+  int _count = 0;
 
   @override
   void initState() {
-    widget.counter.countStream;
+    widget.counter.countStream.listen((count) {
+      setState(() {
+        _count = count;
+      });
+    });
     super.initState();
   }
 
@@ -36,14 +39,10 @@ class CounterPageState extends State<CounterPage> {
             const Text(
               'You have pushed the button this many times:',
             ),
-            StreamBuilder<int>(
-                stream: widget.counter.countStream,
-                builder: (context, snapshot) {
-                  return Text(
-                    '${snapshot.data}',
-                    style: Theme.of(context).textTheme.headline4,
-                  );
-                })
+            Text(
+              '$_count',
+              style: Theme.of(context).textTheme.headline4,
+            ),
           ],
         ),
       ),
