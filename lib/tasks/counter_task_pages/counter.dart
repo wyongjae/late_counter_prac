@@ -8,7 +8,7 @@ class Counter {
   int counter = 0;
 
   void incrementCounter() {
-    final result = counter++;
+    final result = counter+=2;
     _countStreamController.add(result);
   }
 }
