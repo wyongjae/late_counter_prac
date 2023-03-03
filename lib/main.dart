@@ -19,7 +19,9 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
         providers: [
           ChangeNotifierProvider(create: (_) => Loading()),
-          ChangeNotifierProvider(create: (_) => CounterViewModel(NormalCounterRepository())),
+          ChangeNotifierProvider(
+            create: (_) => CounterViewModel(NormalCounterRepository()),
+          ),
         ],
         child: MaterialApp(
           title: 'Flutter Demo',

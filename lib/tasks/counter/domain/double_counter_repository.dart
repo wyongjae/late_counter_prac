@@ -4,7 +4,7 @@ class DoubleCounterRepository implements CounterRepository {
   int counter = 0;
 
   @override
-  void incrementCounter() {
-    counter += 2;
+  int incrementCounter() {
+    return counter += 2;
   }
 }

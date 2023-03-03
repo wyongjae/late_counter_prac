@@ -4,7 +4,8 @@ class NormalCounterRepository implements CounterRepository {
   int counter = 0;
 
   @override
-  void incrementCounter() {
+  int incrementCounter() {
     counter++;
+    return counter;
   }
 }

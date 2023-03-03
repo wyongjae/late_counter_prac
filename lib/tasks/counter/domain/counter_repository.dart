@@ -1,3 +1,3 @@
 abstract class CounterRepository {
-  void incrementCounter() {}
+  int incrementCounter();
 }
