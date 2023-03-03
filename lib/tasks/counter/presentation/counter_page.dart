@@ -36,7 +36,7 @@ class CounterPageState extends State<CounterPage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          viewModel.incrementCounter();
+          viewModel.getData();
         },
         tooltip: 'Increment',
         child: const Icon(Icons.add),

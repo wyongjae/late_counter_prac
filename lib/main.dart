@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:late_conter_prac/pages.dart';
+import 'package:late_conter_prac/tasks/counter/domain/normal_counter_repository.dart';
 import 'package:late_conter_prac/tasks/counter/presentation/counter_view_model.dart';
 import 'package:late_conter_prac/tasks/fourth_task_pages/loading.dart';
 import 'package:provider/provider.dart';
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
         providers: [
           ChangeNotifierProvider(create: (_) => Loading()),
-          ChangeNotifierProvider(create: (_) => CounterViewModel()),
+          ChangeNotifierProvider(create: (_) => CounterViewModel(NormalCounterRepository())),
         ],
         child: MaterialApp(
           title: 'Flutter Demo',
