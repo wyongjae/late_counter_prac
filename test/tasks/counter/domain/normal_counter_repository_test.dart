@@ -3,10 +3,10 @@ import 'package:late_conter_prac/tasks/counter/domain/normal_counter_repository.
 
 void main() {
   test('숫자가 1 증가해야 한다', () {
-    final viewModel = NormalCounterRepository();
+    final repository = NormalCounterRepository();
 
-    viewModel.incrementCounter();
+    repository.incrementCounter();
 
-    expect(viewModel.counter, 1);
+    expect(repository.counter, 1);
   });
 }

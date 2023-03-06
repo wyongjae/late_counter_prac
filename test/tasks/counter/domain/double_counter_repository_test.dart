@@ -3,10 +3,10 @@ import 'package:late_conter_prac/tasks/counter/domain/double_counter_repository.
 
 void main() {
   test('숫자가 2 증가해야 한다', () {
-    final viewModel = DoubleCounterRepository();
+    final repository = DoubleCounterRepository();
 
-    viewModel.incrementCounter();
+    repository.incrementCounter();
 
-    expect(viewModel.counter, 2);
+    expect(repository.counter, 2);
   });
 }

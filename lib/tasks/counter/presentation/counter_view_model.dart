@@ -9,8 +9,7 @@ class CounterViewModel with ChangeNotifier {
   CounterViewModel(this.repository);
 
   void getData() {
-    final _counter = repository.incrementCounter();
-    counter = _counter;
+    counter = repository.incrementCounter();
 
     notifyListeners();
   }
